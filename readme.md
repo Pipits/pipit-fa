@@ -65,8 +65,6 @@ pipit_fa_icon('fal fa-angle-down', [], true);
 
 ### Perch Templates
 
-At the moment it can only be used at runtime. So you can use it with `perch_content_custom()`, but not `perch_content()`.
-
 Besides the `icon` attribute, an `id` and the `html` attribute are also required.
 
 ```markup
