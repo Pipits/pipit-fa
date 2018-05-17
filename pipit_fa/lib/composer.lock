@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "91152d0ebdb9777f62105a92279f4510",
+    "packages": [
+        {
+            "name": "husseinalhammad/fontawesome-svg",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/husseinalhammad/FontAwesomeSVG-PHP.git",
+                "reference": "633aeaf05c55eb689835fb33b4669b1219952557"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/husseinalhammad/FontAwesomeSVG-PHP/zipball/633aeaf05c55eb689835fb33b4669b1219952557",
+                "reference": "633aeaf05c55eb689835fb33b4669b1219952557",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Hussein Al Hammad",
+                    "email": "contact@hussein-alhammad.com",
+                    "homepage": "https://hussein-alhammad.com"
+                }
+            ],
+            "description": "PHP class to add Font Awesome 5+'s SVG icons inline without Javascript.",
+            "homepage": "https://github.com/husseinalhammad/FontAwesomeSVG-PHP",
+            "keywords": [
+                "FontAwesome",
+                "svg"
+            ],
+            "time": "2018-05-17T13:10:26+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
