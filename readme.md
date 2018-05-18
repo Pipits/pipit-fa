@@ -6,7 +6,7 @@ The Pipit Font Awesome app gives you the ability to add inline SVG icons from th
 
 ### The app
 
-* Download the latest version of the Catalog App.
+* Download the latest version of the app.
 * Unzip the download
 * Place the `pipit_fa` folder in `perch/addons/apps`
 * Add `pipit_fa` to your app list in `perch/config/apps.php`
