@@ -41,13 +41,13 @@ define('PIPIT_FA_SVG_DIR', dirname(PERCH_PATH).'/assets/raw-svg');
 ### PHP
 
 ```php
-pipit_fa_icon('fal fa-angle-down');
+pipit_fa_icon('fas fa-angle-down');
 ```
 
 With options:
 
 ```php
-pipit_fa_icon('fal fa-angle-down', [
+pipit_fa_icon('fas fa-angle-down', [
     'class' => 'my-custom-class another-class',
     'default_class' => false,
     'title' => 'My title',
@@ -59,7 +59,7 @@ pipit_fa_icon('fal fa-angle-down', [
 Return icon instead of echoing it:
 
 ```php
-pipit_fa_icon('fal fa-angle-down', [], true);
+pipit_fa_icon('fas fa-angle-down', [], true);
 ```
 
 
