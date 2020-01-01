@@ -59,7 +59,7 @@ pipit_fa_icon($id, $opts, $return);
 | Array      | Options array, see below                                       |
 | Boolean    | Set to `true` to have the value returned instead of echoed.    |
 
-#### Option array
+#### Options array
 
 | Option                | What it means   |
 |-----------------------|--------------------------------------------------------------------------|
