@@ -40,6 +40,40 @@ define('PIPIT_FA_SVG_DIR', dirname(PERCH_PATH).'/assets/raw-svg');
 
 ### PHP
 
+Use the `pipit_fa_icon()` function to output an icon in PHP:
+
+```php
+pipit_fa_icon('fas fa-angle-down');
+```
+
+
+#### Parameters
+
+```php
+pipit_fa_icon($id, $opts, $return);
+```
+
+| Type       | Description                                                    |
+|------------|----------------------------------------------------------------|
+| String     | Icon ID e.g. `fas fa-angle-down`                               |
+| Array      | Options array, see below                                       |
+| Boolean    | Set to `true` to have the value returned instead of echoed.    |
+
+#### Option array
+
+| Option                | What it means   |
+|-----------------------|--------------------------------------------------------------------------|
+| class                 | Adds classes to the SVG tag |
+| default_class         | If set to `false`, the default CSS class won't be added to the SVG tag. Deafult: `true`.  |
+| title                 | Adds a `<title>` inside the SVG tag for semantic icons |
+| title_id              | Adds an `id` attribute to `<title>` and adds `aria-labelledby` on the SVG tag with the same value |
+| role                  | The value of the `role` attribute in the SVG tag. Default: `img` |
+| fill                  | The value of the `fill` attribute in the `<path>` inside the SVG. Default: `currentColor` |
+| aria-*                | You can add any aria-* attribute to the SVG tag e.g. `aria-label` |
+
+
+#### Exampels:
+
 ```php
 pipit_fa_icon('fas fa-angle-down');
 ```
@@ -59,20 +93,37 @@ pipit_fa_icon('fas fa-angle-down', [
 Return icon instead of echoing it:
 
 ```php
-pipit_fa_icon('fas fa-angle-down', [], true);
+$icon = pipit_fa_icon('fas fa-angle-down', [], true);
 ```
+
+
+
 
 
 ### Perch Templates
 
-Besides the `icon` attribute, an `id` and the `html` attribute are also required.
+Use the `perch:fa` namespace to render icons in a Perch template. The `id` and `icon` attributes are required.
 
-```markup
+```html
 <perch:fa id="twitter" icon="fab fa-twitter" html>
 ```
 
-Additional options can be added as attributes:
+| Attribute  | Description                                                    |
+|------------|----------------------------------------------------------------|
+| id         | An ID of your choosing. It can be anything, but it has to be unique. Use letters, numbers and underscores only  |
+| icon       | Icon ID e.g. `fas fa-angle-down`                               |
+| html       | Set to `true` to have the SVG tag output without encoding.     |
 
-```markup
-<perch:fa id="twitter" icon="fab fa-twitter" html role="img" class="custom-class another-class" fill="red">
+
+The options from the [option array](#options-array) can be added as attributes:
+
+```html
+<perch:fa id="twitter" icon="fab fa-twitter" html role="img" class="custom-class another-class" fill="red" title="Some title" title-id="some-id">
+```
+
+You can also add `aria-*` attributes:
+
+
+```html
+<perch:fa id="twitter" icon="fab fa-twitter" html aria-label="Some label">
 ```
