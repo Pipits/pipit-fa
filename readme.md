@@ -69,7 +69,7 @@ pipit_fa_icon($id, $opts, $return);
 | title_id              | Adds an `id` attribute to `<title>` and adds `aria-labelledby` on the SVG tag with the same value |
 | role                  | The value of the `role` attribute in the SVG tag. Default: `img` |
 | fill                  | The value of the `fill` attribute in the `<path>` inside the SVG. Default: `currentColor` |
-| aria-*                | You can add any aria-* attribute to the SVG tag e.g. `aria-label` |
+| aria-*                | You can add any `aria-*` attribute to the SVG tag e.g. `aria-label` |
 
 
 #### Exampels:
