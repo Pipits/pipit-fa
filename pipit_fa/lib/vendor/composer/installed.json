@@ -1,23 +1,23 @@
 [
     {
         "name": "husseinalhammad/fontawesome-svg",
-        "version": "1.0",
-        "version_normalized": "1.0.0.0",
+        "version": "1.1",
+        "version_normalized": "1.1.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/husseinalhammad/FontAwesomeSVG-PHP.git",
-            "reference": "633aeaf05c55eb689835fb33b4669b1219952557"
+            "reference": "b901030fa1ce871cac809c7540be8688efbd11c6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/husseinalhammad/FontAwesomeSVG-PHP/zipball/633aeaf05c55eb689835fb33b4669b1219952557",
-            "reference": "633aeaf05c55eb689835fb33b4669b1219952557",
+            "url": "https://api.github.com/repos/husseinalhammad/FontAwesomeSVG-PHP/zipball/b901030fa1ce871cac809c7540be8688efbd11c6",
+            "reference": "b901030fa1ce871cac809c7540be8688efbd11c6",
             "shasum": ""
         },
         "require": {
             "php": ">=5.3.0"
         },
-        "time": "2018-05-17T13:10:26+00:00",
+        "time": "2019-12-30T07:05:00+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {

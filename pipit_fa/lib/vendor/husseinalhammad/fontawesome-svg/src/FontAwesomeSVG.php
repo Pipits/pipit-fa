@@ -12,9 +12,13 @@ class FontAwesomeSVG {
 
 
     /**
+     * Get SVG icon
      * 
+     * @param string $id    icon ID e.g. fas fa-house
+     * @param array $opts   options array
+     * @return string|boolean
      */
-    public function get_svg($id, $opts=false) {
+    public function get_svg($id, $opts=[]) {
         try {
             $icon = $this->get_icon_details($id);
         } catch(Exception $e) {
@@ -32,11 +36,7 @@ class FontAwesomeSVG {
             'fill' => 'currentColor',
         ];
 
-        if (is_array($opts)) {
-            $opts = array_merge($default_opts, $opts);
-        } else {
-            $opts = $default_opts;
-        }
+        $opts = array_merge($default_opts, $opts);
 
 
 
@@ -49,27 +49,47 @@ class FontAwesomeSVG {
         }
 
 
+        // $opts[aria-*]
+        // strlen('aria-') = 5
+        $aria_opts = array_filter($opts, function($item, $key){
+            if(substr($key, 0, 5) == 'aria-') return $item;
+        }, ARRAY_FILTER_USE_BOTH);
+
         
 
         foreach ($doc->getElementsByTagName('svg') as $item) {
             if($classes != '') $item->setAttribute('class', $classes);
             if($opts['role']) $item->setAttribute('role', $opts['role']);
+
+
+            foreach($aria_opts as $key => $val) {
+                $item->setAttribute($key, $val);
+            }
             
 
             if($opts['title']) {
                 $title = $doc->createElement("title");
                 $title->nodeValue = $opts['title'];
 
-                // TODO: add aria-labelledby
-                //$title->setAttribute('id', '');
-                //$item->setAttribute('aria-labelledby', '');
+                $title_node = $item->appendChild($title);
 
-                $item->appendChild($title);
-            } else {
+                // <title> id attribute has to be set to add aria-labelledby
+                if(isset($opts['title_id'])) {
+                    $title_id = $opts['title_id'];
+                    $title_node->setAttribute('id', $title_id);
+                    $item->setAttribute('aria-labelledby', $title_id);
+                }
+                
+            } 
+            
+            
+            if(!isset($aria_opts['aria-label']) && !isset($opts['title_id'])) {
                 $item->setAttribute('aria-hidden', 'true');
             }
         }
 
+
+        
         foreach ($doc->getElementsByTagName('path') as $item) {
             $item->setAttribute('fill', $opts['fill']);
         }
@@ -81,7 +101,10 @@ class FontAwesomeSVG {
 
 
     /**
+     * Get an icon's details from icon ID
      * 
+     * @param string $id    icon ID e.g. fas fa-house
+     * @return array
      */
     public function get_icon_details($id) {
         $icon = array();
@@ -105,10 +128,13 @@ class FontAwesomeSVG {
 
 
     /**
+     * Get the directory that contains the SVG icon file
      * 
+     * @param string $style
+     * @return string
      */
-    public function get_icon_dir($iconID) {
-        switch($iconID) {
+    public function get_icon_dir($style) {
+        switch($style) {
             case 'fas':
                 $dir = 'solid';
                 break;
@@ -136,7 +162,10 @@ class FontAwesomeSVG {
 
 
     /**
+     * Get the icon's SVG file name
      * 
+     * @param string $icon_name
+     * @return string
      */
     public function get_icon_filename($icon_name) {
         return str_replace('fa-', '', $icon_name);

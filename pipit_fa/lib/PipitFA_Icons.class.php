@@ -19,6 +19,9 @@ class PipitFA_Icons extends FontAwesomeSVG {
             $opts[$key] = $value;
         }
 
+        
+        $aria_attrs = $Tag->search_attributes_for('aria-');
+        $opts = array_merge($opts, $aria_attrs);
         return $this->get_svg($Tag->icon, $opts);
     }
 

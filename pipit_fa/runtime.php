@@ -11,7 +11,7 @@
 
     
     
-    function pipit_fa_icon($icon, $opts=false, $return=false) {
+    function pipit_fa_icon($icon, $opts=[], $return=false) {
         $Icons = new PipitFA_Icons();
 
         $icon = $Icons->get_svg($icon, $opts);
